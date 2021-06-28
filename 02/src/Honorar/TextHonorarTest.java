@@ -22,5 +22,11 @@ public class TextHonorarTest
         assertEquals(12, textHonorar.calcHonorar());;
     }
 
-
+    @Test
+    public void calcPicture()
+    {
+        String text = "Hallo Picture Hallo";
+        TextHonorar textHonorar = new TextHonorar(text);
+        assertEquals(textHonorar.calcPictures(), 1);
+    }
 }
