@@ -22,4 +22,14 @@ public class TextHonorar
 
         return honorar;
     }
+
+    public int calcPictures()
+    {
+        return Collections.frequency(Arrays.asList(text.split("[ ,:;.]")), "Picture");
+    }
+
+    public void setText(String text)
+    {
+        this.text = text;
+    }
 }
