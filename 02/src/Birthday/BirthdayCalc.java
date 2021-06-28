@@ -26,4 +26,15 @@ public class BirthdayCalc
             return -diff + 1;
     }
 
+    public void setBirthday(LocalDateTime birthday)
+    {
+        this.birthday = birthday;
+    }
+
+    public LocalDateTime getEinsteinBirthday()
+    {
+        // retrieving from online birthday API ...
+        return LocalDateTime.of(1879, 3, 14, 0, 0);
+    }
+
 }
