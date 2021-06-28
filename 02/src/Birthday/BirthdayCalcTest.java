@@ -29,4 +29,17 @@ public class BirthdayCalcTest
         BirthdayCalc bc = new BirthdayCalc(5, 13, 2000);
     }
 
+    @org.junit.Test
+    public void mockTest()
+    {
+        BirthdayCalc bc = new BirthdayCalc(1, 1, 2000);
+        bc.setBirthday(mockedEinsteinBirthday());
+        assertEquals(142, bc.getAge());
+    }
+
+    LocalDateTime mockedEinsteinBirthday()
+    {
+        return LocalDateTime.of(1879, 3, 14, 0, 0);
+    }
+
 }
