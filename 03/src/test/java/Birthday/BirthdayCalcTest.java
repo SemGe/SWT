@@ -1,13 +1,13 @@
 package Birthday;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import java.time.DateTimeException;
 import java.time.LocalDateTime;
 
-import static org.junit.Assert.*;
+import static org.junit.jupiter.api.Assertions.*;
 
-public class BirthdayCalcTest
+class BirthdayCalcTest
 {
 
     @Test
@@ -21,14 +21,16 @@ public class BirthdayCalcTest
     public void getDaysUntilNextBirthday()
     {
         BirthdayCalc bc = new BirthdayCalc(5, 11, 2000);
-        assertEquals(124, bc.getDaysUntilNextBirthday());       // needs to be updated every day
+        assertEquals(124, bc.getDaysUntilNextBirthday());       // needs to be updated everyday
     }
 
-    @Test(expected = DateTimeException.class)
+    @Test()
     public void invalidFormat()
     {
         // invalid month
-        BirthdayCalc bc = new BirthdayCalc(5, 13, 2000);
+        assertThrows(DateTimeException.class, () -> {
+            BirthdayCalc bc = new BirthdayCalc(5, 13, 2000);
+        });
     }
 
     @Test
@@ -43,6 +45,4 @@ public class BirthdayCalcTest
     {
         return LocalDateTime.of(1879, 3, 14, 0, 0);
     }
-
-
 }
