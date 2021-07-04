@@ -4,7 +4,7 @@ plugins {
 }
 
 application {
-    mainClassName = 'Birthday.Main'
+    mainClass.set("Birthday.Main")
 }
 
 group 'org.example'
