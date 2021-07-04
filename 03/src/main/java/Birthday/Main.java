@@ -2,11 +2,18 @@ package Birthday;
 
 import java.util.Scanner;
 
+/***
+ * main class runner
+ */
 public class Main
 {
     static BirthdayCalc bc;
     static Scanner in = new Scanner(System.in);
 
+    /**
+     * main runner for BirthdayCalc
+     * @param args command line args
+     */
     public static void main(String[] args)
     {
         welcome();
