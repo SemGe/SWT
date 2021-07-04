@@ -24,11 +24,7 @@ test {
 
 jar {
     manifest {
-        attributes "Main-Class": "Birthday"
-    }
-
-    from {
-        configurations.compile.collect { it.isDirectory() ? it : zipTree(it) }
+        attributes "Main-Class": "Birthday.Main"
     }
 }
 
