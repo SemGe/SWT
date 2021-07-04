@@ -1,5 +1,10 @@
 plugins {
     id 'java'
+    id 'application'
+}
+
+application {
+    mainClassName = 'Birthday.Main'
 }
 
 group 'org.example'
@@ -15,4 +20,18 @@ implementation 'org.junit.jupiter:junit-jupiter:5.7.0'
 
 test {
     useJUnitPlatform()
+}
+
+jar {
+    manifest {
+        attributes "Main-Class": "Birthday"
+    }
+
+    from {
+        configurations.compile.collect { it.isDirectory() ? it : zipTree(it) }
+    }
+}
+
+run{
+    standardInput = System.in
 }
